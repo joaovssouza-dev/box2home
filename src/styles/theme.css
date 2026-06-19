@@ -1,0 +1,212 @@
+:root {
+  /* ===== TEMA CLARO ===== */
+  /* Azul Marinho (Principal) */
+  --primary-50: #f0f4f8;
+  --primary-100: #d9e2ec;
+  --primary-200: #bcccdc;
+  --primary-300: #9fb3c8;
+  --primary-400: #829ab1;
+  --primary-500: #627d98;
+  --primary-600: #486581;
+  --primary-700: #334e68;
+  --primary-800: #243b53;
+  --primary-900: #102a43;
+  
+  /* Areia/Dourado (Secundária) */
+  --secondary-50: #fef9ef;
+  --secondary-100: #fdefd4;
+  --secondary-200: #f9daa8;
+  --secondary-300: #f0c376;
+  --secondary-400: #e5ab4a;
+  --secondary-500: #d4942a;
+  --secondary-600: #b8771e;
+  --secondary-700: #935e1a;
+  --secondary-800: #704516;
+  --secondary-900: #4d2e0c;
+
+  /* Cores de Status */
+  --success: #627d98;  /* Tom azulado ao invés de verde puro */
+  --warning: #d4942a;  /* Dourado */
+  --danger: #8b3a3a;   /* Vermelho terroso */
+  --info: #486581;     /* Azul médio */
+  
+  /* Superfícies */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f0f4f8;
+  --bg-tertiary: #e2e8f0;
+  --text-primary: #243b53;
+  --text-secondary: #627d98;
+  --text-muted: #829ab1;
+  --border: #d9e2ec;
+  
+  /* Sombras */
+  --shadow-sm: 0 1px 2px rgba(16, 42, 67, 0.05);
+  --shadow-md: 0 4px 6px rgba(16, 42, 67, 0.07);
+  --shadow-lg: 0 10px 15px rgba(16, 42, 67, 0.1);
+}
+
+/* ===== TEMA ESCURO ===== */
+[data-theme="dark"] {
+  --bg-primary: #102a43;
+  --bg-secondary: #243b53;
+  --bg-tertiary: #334e68;
+  --text-primary: #f0f4f8;
+  --text-secondary: #bcccdc;
+  --text-muted: #829ab1;
+  --border: #486581;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== RESET E ESTILOS BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* ===== UTILITÁRIOS ===== */
+.card {
+  background: var(--bg-primary);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary {
+  background: var(--primary-700);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-800);
+}
+
+.btn-secondary {
+  background: var(--secondary-400);
+  color: var(--primary-900);
+}
+
+.btn-secondary:hover {
+  background: var(--secondary-500);
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: white;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+.input {
+  width: 100%;
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: border-color 0.2s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 3px rgba(98, 125, 152, 0.1);
+}
+
+.badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.badge-success {
+  background: var(--primary-100);
+  color: var(--primary-700);
+}
+
+.badge-warning {
+  background: var(--secondary-100);
+  color: var(--secondary-700);
+}
+
+.badge-danger {
+  background: #fce4e4;
+  color: var(--danger);
+}
+
+/* ===== LAYOUT ===== */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-2 { gap: 8px; }
+.gap-4 { gap: 16px; }
+.gap-6 { gap: 24px; }
+.grid { display: grid; }
+.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* Scrollbar customizada */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-300);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-400);
+}
