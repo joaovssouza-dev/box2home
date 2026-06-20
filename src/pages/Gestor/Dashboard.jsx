@@ -1,6 +1,6 @@
-import Header from '../../components/Layout/Header';
-import LiveMap from '../../components/Map/LiveMap';
-import { MetricCard, StatusBadge } from '../../components/ui/Card';
+import Header from '../../components/layout/Header';
+import LiveMap from '../../components/map/LiveMap';
+import Card, { MetricCard, StatusBadge } from '../../components/ui/Card';
 import { Icons } from '../../components/ui/Icons';
 import { useSimulation } from '../../hooks/useSimulation';
 
